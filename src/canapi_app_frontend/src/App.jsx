@@ -1,8 +1,12 @@
-import { useState } from 'react';
-import { canapi_app_backend } from 'declarations/canapi_app_backend';
+import { useEffect, useState } from "react";
+import { canapi_app_backend } from "declarations/canapi_app_backend";
+import { useAuth } from "./Hooks/Auth";
 
 function App() {
-  const [greeting, setGreeting] = useState('');
+  const { login, logout, principal, isAuthenticated } = useAuth();
+  const [greeting, setGreeting] = useState("");
+
+  useEffect(() => {}, [isAuthenticated, principal]);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -18,11 +22,32 @@ function App() {
       <img src="/logo2.svg" alt="DFINITY logo" />
       <br />
       <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
+
+      {isAuthenticated && (
+        <div>
+          <form action="#" onSubmit={handleSubmit}>
+            <label htmlFor="name">Enter your name: &nbsp;</label>
+            <input id="name" alt="Name" type="text" />
+            <button type="submit">Click Me!</button>
+          </form>
+          <button
+            onClick={() => {
+              logout();
+            }}
+          >
+            log out
+          </button>
+        </div>
+      )}
+      {!!!isAuthenticated && (
+        <button
+          onClick={() => {
+            login();
+          }}
+        >
+          log in with II
+        </button>
+      )}
       <section id="greeting">{greeting}</section>
     </main>
   );
