@@ -22,7 +22,7 @@ function App() {
       <img src="/logo2.svg" alt="DFINITY logo" />
       <br />
       <br />
-
+        
       {isAuthenticated && (
         <div>
           <form action="#" onSubmit={handleSubmit}>
