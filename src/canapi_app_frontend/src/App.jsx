@@ -26,11 +26,12 @@ function App() {
       {isAuthenticated && (
         <div>
           <form action="#" onSubmit={handleSubmit}>
-            <label htmlFor="name">Enter your name: &nbsp;</label>
+            <label htmlFor="name" className="text-grey-700">Enter your name: &nbsp;</label>
             <input id="name" alt="Name" type="text" />
             <button type="submit">Click Me!</button>
           </form>
-          <button
+          <button 
+            className="font-bold"
             onClick={() => {
               logout();
             }}
@@ -48,7 +49,7 @@ function App() {
           log in with II
         </button>
       )}
-      <section id="greeting">{greeting}</section>
+      <section id="greeting"><span className="text-3xl font-bold underline">{greeting}</span></section>
     </main>
   );
 }
