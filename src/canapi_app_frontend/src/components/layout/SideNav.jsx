@@ -39,9 +39,6 @@ export default function Nav() {
               </li>
           </ul>
         )}
-        {!!!isAuthenticated && (
-          <button onClick={login}>Log In with II</button>
-        )}
       </div>
 
       <img src={poweredByImage} alt="Powered By ICP badge" className="w-36 h-auto p-2 place-self-center" />
