@@ -7,7 +7,7 @@ import Header from './components/layout/Header';
 import './assets/css/index.css';
 import Canisters from "./screens/Canisters";
 import DataStore from "./screens/DataStore";
-import API from "./screens/API";
+import Actions from "./screens/Actions";
 import Docs from "./screens/Docs";
 import Marketplace from "./screens/Marketplace";
 import Account from "./screens/Account";
@@ -25,7 +25,7 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/canisters" element={<Canisters />} />
               <Route path="/datastores" element={<DataStore />} />
-              <Route path="/apis" element={<API />} />
+              <Route path="/actions" element={<Actions />} />
               <Route path="/docs" element={<Docs />} />
               <Route path="/marketplace" element={<Marketplace />} />
               <Route path="/account" element={<Account />} />

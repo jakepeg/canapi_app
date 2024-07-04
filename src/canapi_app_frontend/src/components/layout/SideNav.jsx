@@ -15,17 +15,17 @@ export default function Nav() {
         {isAuthenticated && (
           <ul className="space-y-3 px-4 mt-8">
               <li key="/projects">
-                <NavLink to="/projects">My Projects</NavLink>
+                <NavLink to="/projects">Projects</NavLink>
               </li>
-              <li key="/canisters">
+              {/* <li key="/canisters">
                 <NavLink to="/canisters">Canisters</NavLink>
-              </li>
+              </li> */}
               <li key="/datastores">
-                <NavLink to="/datastores">DataStores</NavLink>
+                <NavLink to="/datastores">Data</NavLink>
               </li>
 
-              <li key="/apis">
-                <NavLink to="/apis">APIs</NavLink>
+              <li key="/actions">
+                <NavLink to="/actions">Actions</NavLink>
               </li>
 
               <li key="/docs">
@@ -40,7 +40,6 @@ export default function Nav() {
           </ul>
         )}
       </div>
-
       <img src={poweredByImage} alt="Powered By ICP badge" className="w-36 h-auto p-2 place-self-center" />
     </div>
   );
